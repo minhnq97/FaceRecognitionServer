@@ -46,5 +46,18 @@ namespace FaceRecognition.BusinessLogic.Components
             //}).ToList();
             return response;
         }
+
+        public GetCourseByTermResponse GetCourseByTerm(GetCourseByTermRequest request)
+        {
+            GetCourseByTermResponse response = new GetCourseByTermResponse();
+            var courseList = _context.Schedules.Where(s => s.Student.StudentId == request.UserId && s.Term.TermId == request.TermId)
+                            .Select(s => new CourseDto()
+                            {
+                                CourseId = s.Course.CourseId,
+                                CourseName = s.Course.CourseName
+                            }).ToList();
+            response.Courses = courseList;
+            return response;
+        }
     }
 }
