@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceRecognition.Database", "DemoFaceRecognition\FaceRecognition.Database.csproj", "{4C4A6B0A-DEFD-4567-94D7-332B6A3EB9F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceRecognition.Api", "FaceRecognition.Api\FaceRecognition.Api.csproj", "{FADC9F41-0C99-4531-B030-D9BCC9C14F1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceRecognition.BusinessLogic", "FaceRecognition.BusinessLogic\FaceRecognition.BusinessLogic.csproj", "{C765910D-497F-41E0-8A8B-D501205536F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C4A6B0A-DEFD-4567-94D7-332B6A3EB9F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C4A6B0A-DEFD-4567-94D7-332B6A3EB9F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C4A6B0A-DEFD-4567-94D7-332B6A3EB9F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C4A6B0A-DEFD-4567-94D7-332B6A3EB9F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FADC9F41-0C99-4531-B030-D9BCC9C14F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FADC9F41-0C99-4531-B030-D9BCC9C14F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FADC9F41-0C99-4531-B030-D9BCC9C14F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FADC9F41-0C99-4531-B030-D9BCC9C14F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C765910D-497F-41E0-8A8B-D501205536F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C765910D-497F-41E0-8A8B-D501205536F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C765910D-497F-41E0-8A8B-D501205536F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C765910D-497F-41E0-8A8B-D501205536F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

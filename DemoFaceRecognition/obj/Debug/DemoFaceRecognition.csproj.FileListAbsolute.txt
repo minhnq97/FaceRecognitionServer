@@ -1,0 +1,13 @@
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\DemoFaceRecognition\bin\Debug\DemoFaceRecognition.exe.config
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\DemoFaceRecognition\obj\Debug\DemoFaceRecognition.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2015\Projects\DemoCodeFirst\DemoFaceRecognition\bin\Debug\DemoFaceRecognition.exe
+C:\Users\User\Documents\Visual Studio 2015\Projects\DemoCodeFirst\DemoFaceRecognition\bin\Debug\DemoFaceRecognition.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\DemoCodeFirst\DemoFaceRecognition\bin\Debug\EntityFramework.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\DemoCodeFirst\DemoFaceRecognition\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\DemoCodeFirst\DemoFaceRecognition\bin\Debug\EntityFramework.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\DemoCodeFirst\DemoFaceRecognition\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\DemoCodeFirst\DemoFaceRecognition\obj\Debug\DemoFaceRecognition.exe
+C:\Users\User\Documents\Visual Studio 2015\Projects\DemoCodeFirst\DemoFaceRecognition\obj\Debug\DemoFaceRecognition.pdb
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\DemoFaceRecognition\obj\Debug\DemoFaceRecognition.Migrations.InitialCreate.resources
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\DemoFaceRecognition\obj\Debug\DemoFaceRecognition.csproj.GenerateResource.Cache
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\DemoFaceRecognition\obj\Debug\DemoFaceRecognition.Migrations.ChangeSlotTimeDataType.resources

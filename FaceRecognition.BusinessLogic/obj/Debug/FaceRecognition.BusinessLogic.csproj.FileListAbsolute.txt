@@ -1,0 +1,12 @@
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\bin\Debug\FaceRecognition.BusinessLogic.dll.config
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\bin\Debug\FaceRecognition.BusinessLogic.dll
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\bin\Debug\FaceRecognition.BusinessLogic.pdb
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\bin\Debug\DemoFaceRecognition.exe
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\bin\Debug\DemoFaceRecognition.pdb
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\obj\Debug\FaceRecognition.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\obj\Debug\FaceRecognition.BusinessLogic.dll
+C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\obj\Debug\FaceRecognition.BusinessLogic.pdb
