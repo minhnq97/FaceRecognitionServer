@@ -1,7 +1,7 @@
 ﻿using DemoFaceRecognition.Model;
 using System.Collections.Generic;
 
-namespace FaceRecognition.Api.Models
+namespace FaceRecognition.BusinessLogic.Models
 {
     public class AttendanceImageDto
     {

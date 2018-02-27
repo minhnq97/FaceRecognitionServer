@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FaceRecognition.Api.Models
+namespace FaceRecognition.BusinessLogic.Models
 {
     public class TeacherDto
     {

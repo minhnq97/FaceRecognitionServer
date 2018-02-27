@@ -9,7 +9,7 @@ namespace DemoFaceRecognition.Context
     using System.Data.Entity;
     using System.Threading.Tasks;
     using DemoFaceRecognition.Model;
-    public class FaceRecognitionContext:DbContext
+    public class FaceRecognitionContext : DbContext
     {
         public FaceRecognitionContext()
         {
