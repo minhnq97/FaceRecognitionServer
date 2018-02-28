@@ -9,7 +9,7 @@ namespace FaceRecognition.BusinessLogic.Contract.Response
     /// <summary>
     /// Response Model when returning a list of schedule records response to client
     /// </summary>
-    public class ScheduleResponse : BaseResponse
+    public class GetScheduleByUserResponse : BaseResponse
     {
 
     }

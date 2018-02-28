@@ -1,4 +1,4 @@
-﻿using FaceRecognition.Api.Models;
+﻿using FaceRecognition.BusinessLogic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace FaceRecognition.BusinessLogic.Contract.Response
 {
-    public class GetCourseByTermResponse:BaseResponse
+    /// <summary>
+    /// Response Model when returning a list of courses response to client
+    /// </summary>
+    public class GetCourseByTermResponse
     {
         public List<CourseDto> Courses { get; set; }
     }

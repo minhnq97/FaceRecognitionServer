@@ -59,12 +59,13 @@
     <Compile Include="Contract\Models\TeacherDto.cs" />
     <Compile Include="Contract\Models\TermDto.cs" />
     <Compile Include="Contract\Request\BaseRequest.cs" />
-    <Compile Include="Contract\Request\GetCourseRequest.cs" />
+    <Compile Include="Contract\Request\GetCourseByTermRequest.cs" />
     <Compile Include="Contract\Request\GetScheduleByUserRequest.cs" />
     <Compile Include="Contract\Request\GetTermByUserRequest.cs" />
     <Compile Include="Contract\Response\BaseResponse.cs" />
-    <Compile Include="Contract\Response\ScheduleResponse.cs" />
-    <Compile Include="Contract\Response\TermResponse.cs" />
+    <Compile Include="Contract\Response\GetCourseByTermResponse.cs" />
+    <Compile Include="Contract\Response\GetScheduleByUserResponse.cs" />
+    <Compile Include="Contract\Response\GetTermByUserResponse.cs" />
     <Compile Include="Interfaces\IScheduleManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

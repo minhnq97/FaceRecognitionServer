@@ -13,7 +13,7 @@ namespace FaceRecognition.BusinessLogic.Interfaces
     /// </summary>
     public interface IScheduleManagement
     {
-        TermResponse GetTermByUser(GetTermByUserRequest request);
+        GetTermByUserResponse GetTermByUser(GetTermByUserRequest request);
         GetCourseByTermResponse GetCourseByTerm(GetCourseByTermRequest request);
     }
 }

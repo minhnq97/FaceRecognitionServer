@@ -23,9 +23,9 @@ namespace FaceRecognition.BusinessLogic.Components
             _context.Dispose();
         }
 
-        public TermResponse GetTermByUser(GetTermByUserRequest request)
+        public GetTermByUserResponse GetTermByUser(GetTermByUserRequest request)
         {
-            TermResponse response = new TermResponse();
+            GetTermByUserResponse response = new GetTermByUserResponse();
             var termList = new List<TermDto>();
             
             if (request.RoleName.Equals("student")) 
