@@ -55,13 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\FaceRecognitionContext.cs" />
-    <Compile Include="Migrations\201802181610269_InitialCreate.cs" />
-    <Compile Include="Migrations\201802181610269_InitialCreate.Designer.cs">
-      <DependentUpon>201802181610269_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802221637278_ChangeSlotTimeDataType.cs" />
-    <Compile Include="Migrations\201802221637278_ChangeSlotTimeDataType.Designer.cs">
-      <DependentUpon>201802221637278_ChangeSlotTimeDataType.cs</DependentUpon>
+    <Compile Include="Migrations\201802281006039_InitialCreate.cs" />
+    <Compile Include="Migrations\201802281006039_InitialCreate.Designer.cs">
+      <DependentUpon>201802281006039_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AttendanceImage.cs" />
@@ -80,11 +76,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802181610269_InitialCreate.resx">
-      <DependentUpon>201802181610269_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802221637278_ChangeSlotTimeDataType.resx">
-      <DependentUpon>201802221637278_ChangeSlotTimeDataType.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802281006039_InitialCreate.resx">
+      <DependentUpon>201802281006039_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

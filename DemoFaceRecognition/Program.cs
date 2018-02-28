@@ -2,6 +2,7 @@
 using DemoFaceRecognition.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,6 @@ namespace DemoFaceRecognition
         {
             using (var db = new FaceRecognitionContext())
             {
-
                 var query = from u in db.Students
                             orderby u.StudentId
                             select u;

@@ -11,7 +11,7 @@ namespace FaceRecognition.BusinessLogic.Models
     /// </summary>
     public class TermDto
     {
-        public int TermId { get; set; }
+        public string TermId { get; set; }
         public string TermName { get; set; }
     }
 }

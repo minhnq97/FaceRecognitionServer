@@ -52,12 +52,16 @@ namespace FaceRecognition.BusinessLogic.Components
         public GetCourseByTermResponse GetCourseByTerm(GetCourseByTermRequest request)
         {
             GetCourseByTermResponse response = new GetCourseByTermResponse();
-            var courseList = _context.Schedules.Where(s => s.Student.StudentId == request.UserId && s.Term.TermId == request.TermId)
+            var courseList = new List<CourseDto>();
+            if (request.RoleName.Equals("student"))
+            {
+                courseList = _context.Schedules.Where(s => s.Student.StudentId == request.UserId && s.Term.TermId == request.TermId)
                             .Select(s => new CourseDto()
                             {
                                 CourseId = s.Course.CourseId,
                                 CourseName = s.Course.CourseName
                             }).ToList();
+            }
             response.Courses = courseList;
             return response;
         }
