@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace FaceRecognition.BusinessLogic.Contract.Request
 {
-    public class GetCourseByTermRequest:BaseRequest
+    /// <summary>
+    /// Request Model for a list of courses request from client
+    /// </summary>
+    public class GetCourseByTermRequest : BaseRequest
     {
-        public int TermId { get; set; }
+        public string TermId { get; set; }
     }
 }

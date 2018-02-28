@@ -6,6 +6,9 @@ using System.Web;
 
 namespace FaceRecognition.BusinessLogic.Models
 {
+    /// <summary>
+    /// Entity representing table Teachers in the database
+    /// </summary>
     public class TeacherDto
     {
         public string TeacherId { get; set; }

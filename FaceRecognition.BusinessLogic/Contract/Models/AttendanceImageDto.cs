@@ -5,6 +5,9 @@ namespace FaceRecognition.BusinessLogic.Models
 {
     public class AttendanceImageDto
     {
+        /// <summary>
+        /// Entity representing table AttendanceImages in the database
+        /// </summary>
         public int AttendanceImageId { get; set; }
         public string ImagePath { get; set; }
 

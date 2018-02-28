@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace FaceRecognition.BusinessLogic.Contract.Response
 {
+    /// <summary>
+    /// Base Response Model when returning response to client
+    /// </summary>
     public class BaseResponse
     {
     }

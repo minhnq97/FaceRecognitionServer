@@ -1,8 +1,8 @@
 ﻿using DemoFaceRecognition.Context;
-using FaceRecognition.Api.Models;
 using FaceRecognition.BusinessLogic.Contract.Request;
 using FaceRecognition.BusinessLogic.Contract.Response;
 using FaceRecognition.BusinessLogic.Interfaces;
+using FaceRecognition.BusinessLogic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,10 @@ using System.Threading.Tasks;
 
 namespace FaceRecognition.BusinessLogic.Components
 {
-    public class ScheduleManagement:IScheduleManagement, IDisposable
+    /// <summary>
+    /// Provide methods to handle logics related to Schedule
+    /// </summary>
+    public class ScheduleManagement : IScheduleManagement, IDisposable
     {
         private readonly FaceRecognitionContext _context = new FaceRecognitionContext();
 
@@ -20,30 +23,29 @@ namespace FaceRecognition.BusinessLogic.Components
             _context.Dispose();
         }
 
-        public GetTermByUserResponse GetTermByUser(GetTermByUserRequest request)
+        public TermResponse GetTermByUser(GetTermByUserRequest request)
         {
-            GetTermByUserResponse response = new GetTermByUserResponse();
-            var termList = _context.Schedules.Where(s => s.Student.StudentId==request.UserId).Select(s => new TermDto()
-            { 
-                TermId = s.Term.TermId,
-                TermName = s.Term.TermName
-            }).ToList();
+            TermResponse response = new TermResponse();
+            var termList = new List<TermDto>();
+            
+            if (request.RoleName.Equals("student")) 
+            {
+                termList = _context.Schedules.Where(s => s.Student.StudentId == request.UserId).Select(s => new TermDto()
+                {
+                    TermId = s.Term.TermId,
+                    TermName = s.Term.TermName
+                }).ToList();
+            }
+            else if (request.RoleName.Equals("teacher"))
+            {
+                termList = _context.Schedules.Where(s => s.Teacher.TeacherId == request.UserId).Select(s => new TermDto()
+                {
+                    TermId = s.Term.TermId,
+                    TermName = s.Term.TermName
+                }).ToList();
+            }
             response.Terms = termList;
-            //var scheduleList = _context.Schedules.Where(s => s.Student.StudentId == request.UserId).Select(s => new ScheduleDto()
-            //{
-            //    ScheduleId = s.ScheduleId,
-            //    Date = s.Date,
-            //    Room = s.Room,
-            //    AttendanceStatus = s.AttendanceStatus,
-            //    ReportStatus = s.ReportStatus,
-            //    Slot = s.Slot,
-            //    Student = s.Student,
-            //    Teacher = s.Teacher,
-            //    Course = s.Course,
-            //    Term = s.Term,
-            //    AttendanceImages = s.AttendanceImages.ToList(),
-            //    Class = s.Class
-            //}).ToList();
+
             return response;
         }
 

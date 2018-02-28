@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace FaceRecognition.BusinessLogic.Contract.Request
 {
-    public class GetScheduleByUserRequest:BaseRequest
+    /// <summary>
+    /// Request Model for a list of schedules request from client
+    /// </summary>
+    public class GetScheduleByUserRequest : BaseRequest
     {
-        
+        public string TermId { get; set; }
+        public string CourseId { get; set; }
     }
 }

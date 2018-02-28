@@ -18,7 +18,7 @@ namespace FaceRecognition.Api.Controllers
         private readonly IScheduleManagement _businessLogic = new ScheduleManagement();
 
         [HttpPost]
-        public GetTermByUserResponse GetTermByUser(GetTermByUserRequest request)
+        public TermResponse GetTermByUser(GetTermByUserRequest request)
         {
             var response = _businessLogic.GetTermByUser(request);
             return response;

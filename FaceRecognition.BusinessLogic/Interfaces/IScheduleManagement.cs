@@ -8,9 +8,12 @@ using System.Threading.Tasks;
 
 namespace FaceRecognition.BusinessLogic.Interfaces
 {
+    /// <summary>
+    /// Interface relating to schedule management methods
+    /// </summary>
     public interface IScheduleManagement
     {
-        GetTermByUserResponse GetTermByUser(GetTermByUserRequest request);
+        TermResponse GetTermByUser(GetTermByUserRequest request);
         GetCourseByTermResponse GetCourseByTerm(GetCourseByTermRequest request);
     }
 }

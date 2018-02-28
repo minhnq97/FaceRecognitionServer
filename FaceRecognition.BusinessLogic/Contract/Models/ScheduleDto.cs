@@ -6,6 +6,9 @@ using System.Web;
 
 namespace FaceRecognition.BusinessLogic.Models
 {
+    /// <summary>
+    /// Entity representing table Schedules in the database
+    /// </summary>
     public class ScheduleDto
     {
         public int ScheduleId { get; set; }
