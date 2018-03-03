@@ -10,3 +10,15 @@ C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectB
 C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\DemoFaceRecognition\obj\Debug\DemoFaceRecognition.pdb
 C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\DemoFaceRecognition\obj\Debug\DemoFaceRecognition.Migrations.InitialCreate.resources
 C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\DemoFaceRecognition\obj\Debug\FaceRecognition.Database.csproj.GenerateResource.Cache
+C:\Users\User\Documents\Visual Studio 2015\Projects\FaceRecognitionServer\DemoFaceRecognition\bin\Debug\DemoFaceRecognition.exe.config
+C:\Users\User\Documents\Visual Studio 2015\Projects\FaceRecognitionServer\DemoFaceRecognition\obj\Debug\DemoFaceRecognition.exe
+C:\Users\User\Documents\Visual Studio 2015\Projects\FaceRecognitionServer\DemoFaceRecognition\obj\Debug\DemoFaceRecognition.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\FaceRecognitionServer\DemoFaceRecognition\bin\Debug\DemoFaceRecognition.exe
+C:\Users\User\Documents\Visual Studio 2015\Projects\FaceRecognitionServer\DemoFaceRecognition\bin\Debug\DemoFaceRecognition.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\FaceRecognitionServer\DemoFaceRecognition\bin\Debug\EntityFramework.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\FaceRecognitionServer\DemoFaceRecognition\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\FaceRecognitionServer\DemoFaceRecognition\bin\Debug\EntityFramework.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\FaceRecognitionServer\DemoFaceRecognition\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\FaceRecognitionServer\DemoFaceRecognition\obj\Debug\FaceRecognition.Database.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2015\Projects\FaceRecognitionServer\DemoFaceRecognition\obj\Debug\DemoFaceRecognition.Migrations.InitialCreate.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\FaceRecognitionServer\DemoFaceRecognition\obj\Debug\FaceRecognition.Database.csproj.GenerateResource.Cache
