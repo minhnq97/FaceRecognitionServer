@@ -27,22 +27,28 @@ namespace FaceRecognition.BusinessLogic.Components
         {
             GetTermByUserResponse response = new GetTermByUserResponse();
             var termList = new List<TermDto>();
-            
-            if (request.RoleName.Equals("student")) 
+
+            if (request.RoleName.Equals("student"))
             {
-                termList = _context.Schedules.Where(s => s.Student.StudentId == request.UserId).Select(s => new TermDto()
-                {
-                    TermId = s.Term.TermId,
-                    TermName = s.Term.TermName
-                }).ToList();
+                termList = _context.Schedules.Where(s => s.Student.StudentId == request.UserId)
+                            .Select(s => new { s.Term.TermId, s.Term.TermName })
+                            .GroupBy(g => g.TermId)
+                            .Select(s => new TermDto()
+                            {
+                                TermId = s.FirstOrDefault().TermId,
+                                TermName = s.FirstOrDefault().TermName
+                            }).ToList();
             }
             else if (request.RoleName.Equals("teacher"))
             {
-                termList = _context.Schedules.Where(s => s.Teacher.TeacherId == request.UserId).Select(s => new TermDto()
-                {
-                    TermId = s.Term.TermId,
-                    TermName = s.Term.TermName
-                }).ToList();
+                termList = _context.Schedules.Where(s => s.Teacher.TeacherId == request.UserId)
+                            .Select(s => new { s.Term.TermId, s.Term.TermName })
+                            .GroupBy(g => g.TermId)
+                            .Select(s => new TermDto()
+                            {
+                                TermId = s.FirstOrDefault().TermId,
+                                TermName = s.FirstOrDefault().TermName
+                            }).ToList();
             }
             response.Terms = termList;
 
@@ -56,10 +62,23 @@ namespace FaceRecognition.BusinessLogic.Components
             if (request.RoleName.Equals("student"))
             {
                 courseList = _context.Schedules.Where(s => s.Student.StudentId == request.UserId && s.Term.TermId == request.TermId)
+                            .Select(c => new { c.Course.CourseId, c.Course.CourseName })
+                            .GroupBy(g => new { g.CourseId })
                             .Select(s => new CourseDto()
                             {
-                                CourseId = s.Course.CourseId,
-                                CourseName = s.Course.CourseName
+                                CourseId = s.FirstOrDefault().CourseId,
+                                CourseName = s.FirstOrDefault().CourseName
+                            }).ToList();
+            }
+            else if (request.RoleName.Equals("teacher"))
+            {
+                courseList = _context.Schedules.Where(s => s.Teacher.TeacherId == request.UserId && s.Term.TermId == request.TermId)
+                            .Select(c => new { c.Course.CourseId, c.Course.CourseName })
+                            .GroupBy(g => new { g.CourseId })
+                            .Select(s => new CourseDto()
+                            {
+                                CourseId = s.FirstOrDefault().CourseId,
+                                CourseName = s.FirstOrDefault().CourseName
                             }).ToList();
             }
             response.Courses = courseList;
