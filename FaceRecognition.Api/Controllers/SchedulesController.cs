@@ -7,8 +7,8 @@ using System.Web.Http;
 
 namespace FaceRecognition.Api.Controllers
 {
+    using BusinessLogic.Models;
     using DemoFaceRecognition.Context;
-    using Models;
 
     public class SchedulesController : ApiController
     {

@@ -1,5 +1,5 @@
 ﻿using DemoFaceRecognition.Context;
-using FaceRecognition.Api.Models;
+using FaceRecognition.BusinessLogic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
