@@ -10,17 +10,3 @@ C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognitio
 C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\obj\Debug\FaceRecognition.BusinessLogic.csprojResolveAssemblyReference.cache
 C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\obj\Debug\FaceRecognition.BusinessLogic.dll
 C:\Users\User\documents\visual studio 2015\Projects\DemoCodeFirst\FaceRecognition.BusinessLogic\obj\Debug\FaceRecognition.BusinessLogic.pdb
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\bin\Debug\FaceRecognition.BusinessLogic.dll.config
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\bin\Debug\FaceRecognition.BusinessLogic.dll
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\bin\Debug\FaceRecognition.BusinessLogic.pdb
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\bin\Debug\DemoFaceRecognition.exe
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\bin\Debug\EntityFramework.dll
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\bin\Debug\Newtonsoft.Json.dll
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\bin\Debug\DemoFaceRecognition.pdb
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\bin\Debug\EntityFramework.xml
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\bin\Debug\Newtonsoft.Json.xml
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\obj\Debug\FaceRecognition.BusinessLogic.csprojResolveAssemblyReference.cache
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\obj\Debug\FaceRecognition.BusinessLogic.dll
-C:\Users\minhc\Documents\Visual Studio 2015\Projects\PRM391_AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\obj\Debug\FaceRecognition.BusinessLogic.pdb
