@@ -22,3 +22,5 @@ C:\Users\minhc\Documents\Visual Studio 2015\Projects\AndroidGroupProjectBackend\
 C:\Users\minhc\Documents\Visual Studio 2015\Projects\AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\obj\Debug\FaceRecognition.BusinessLogic.csprojResolveAssemblyReference.cache
 C:\Users\minhc\Documents\Visual Studio 2015\Projects\AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\obj\Debug\FaceRecognition.BusinessLogic.dll
 C:\Users\minhc\Documents\Visual Studio 2015\Projects\AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\obj\Debug\FaceRecognition.BusinessLogic.pdb
+C:\Users\minhc\Documents\Visual Studio 2015\Projects\AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+C:\Users\minhc\Documents\Visual Studio 2015\Projects\AndroidGroupProjectBackend\FaceRecognitionServer\FaceRecognition.BusinessLogic\bin\Debug\Newtonsoft.Json.xml

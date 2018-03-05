@@ -38,6 +38,10 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -49,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\LoginManagement.cs" />
     <Compile Include="Components\ScheduleManagement.cs" />
     <Compile Include="Components\SlotManagement.cs" />
     <Compile Include="Contract\Models\AttendanceImageDto.cs" />
@@ -65,18 +70,20 @@
     <Compile Include="Contract\Request\GetScheduleByUserRequest.cs" />
     <Compile Include="Contract\Request\GetSlotByTeacherRequest.cs" />
     <Compile Include="Contract\Request\GetTermByUserRequest.cs" />
+    <Compile Include="Contract\Request\GetUserByIdTokenRequest.cs" />
     <Compile Include="Contract\Response\BaseResponse.cs" />
     <Compile Include="Contract\Response\GetCourseByTermResponse.cs" />
     <Compile Include="Contract\Response\GetScheduleByUserResponse.cs" />
     <Compile Include="Contract\Response\GetSlotByTeacherResponse.cs" />
     <Compile Include="Contract\Response\GetTermByUserResponse.cs" />
+    <Compile Include="Contract\Response\GetUserByIdTokenResponse.cs" />
+    <Compile Include="Interfaces\ILoginManagement.cs" />
     <Compile Include="Interfaces\IScheduleManagement.cs" />
     <Compile Include="Interfaces\ISlotManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\GoogleApiTokenVerifier.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utils\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DemoFaceRecognition\FaceRecognition.Database.csproj">
       <Project>{4c4a6b0a-defd-4567-94d7-332b6a3eb9f6}</Project>
