@@ -50,23 +50,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\ScheduleManagement.cs" />
+    <Compile Include="Components\SlotManagement.cs" />
     <Compile Include="Contract\Models\AttendanceImageDto.cs" />
     <Compile Include="Contract\Models\ClassDto.cs" />
     <Compile Include="Contract\Models\CourseDto.cs" />
     <Compile Include="Contract\Models\ScheduleDto.cs" />
     <Compile Include="Contract\Models\SlotDto.cs" />
+    <Compile Include="Contract\Models\SlotInformation.cs" />
     <Compile Include="Contract\Models\StudentDto.cs" />
     <Compile Include="Contract\Models\TeacherDto.cs" />
     <Compile Include="Contract\Models\TermDto.cs" />
     <Compile Include="Contract\Request\BaseRequest.cs" />
     <Compile Include="Contract\Request\GetCourseByTermRequest.cs" />
     <Compile Include="Contract\Request\GetScheduleByUserRequest.cs" />
+    <Compile Include="Contract\Request\GetSlotByTeacherRequest.cs" />
     <Compile Include="Contract\Request\GetTermByUserRequest.cs" />
     <Compile Include="Contract\Response\BaseResponse.cs" />
     <Compile Include="Contract\Response\GetCourseByTermResponse.cs" />
     <Compile Include="Contract\Response\GetScheduleByUserResponse.cs" />
+    <Compile Include="Contract\Response\GetSlotByTeacherResponse.cs" />
     <Compile Include="Contract\Response\GetTermByUserResponse.cs" />
     <Compile Include="Interfaces\IScheduleManagement.cs" />
+    <Compile Include="Interfaces\ISlotManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
