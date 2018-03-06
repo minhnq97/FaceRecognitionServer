@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace FaceRecognition.BusinessLogic.Contract.Models
 {
-    public class SlotInformation
+    public class StudentAttendance:StudentDto
     {
-        public SlotDto Slot { get; set; }
-        public CourseDto Course { get; set; }
-        public ClassDto Classes { get; set; }
+        public string AttendanceStatus { get; set; }
     }
 }
