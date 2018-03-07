@@ -29,5 +29,12 @@ namespace FaceRecognition.Api.Controllers
             var response = _businessLogic.GetCourseByTerm(request);
             return response;
         }
+
+        [HttpPost]
+        public GetScheduleByUserResponse GetScheduleByUser(GetScheduleByUserRequest request)
+        {
+            var response = _businessLogic.GetScheduleByUser(request);
+            return response;
+        }
     }
 }

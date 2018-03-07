@@ -15,5 +15,6 @@ namespace FaceRecognition.BusinessLogic.Interfaces
     {
         GetTermByUserResponse GetTermByUser(GetTermByUserRequest request);
         GetCourseByTermResponse GetCourseByTerm(GetCourseByTermRequest request);
+        GetScheduleByUserResponse GetScheduleByUser(GetScheduleByUserRequest request);
     }
 }

@@ -5,6 +5,7 @@ using FaceRecognition.BusinessLogic.Interfaces;
 using FaceRecognition.BusinessLogic.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,6 +83,33 @@ namespace FaceRecognition.BusinessLogic.Components
                             }).ToList();
             }
             response.Courses = courseList;
+            return response;
+        }
+
+        public GetScheduleByUserResponse GetScheduleByUser(GetScheduleByUserRequest request)
+        {
+            GetScheduleByUserResponse response = new GetScheduleByUserResponse();
+            var scheduleList = new List<ScheduleDto>();
+
+            if (request.RoleName.Equals("student"))
+            {
+                scheduleList = _context.Schedules.Where(s => s.Student.StudentId == request.UserId && s.TermId == request.TermId && s.CourseId == request.CourseId)
+                                .Select(s => new ScheduleDto()
+                                {
+                                    ScheduleId = s.ScheduleId,
+                                    Date = SqlFunctions.DateName("day", s.Date) + "/" + SqlFunctions.DateName("month", s.Date) + "/" + SqlFunctions.DateName("year", s.Date),
+                                    SlotNo = s.SlotId,
+                                    TeacherId = s.TeacherId,
+                                    ClassId = s.ClassId,
+                                    AttendanceStatus = s.AttendanceStatus,
+                                    ReportStatus = s.ReportStatus
+                                }).ToList();
+            }
+            else if (request.RoleName.Equals("teacher"))
+            {
+
+            }
+            response.Schedules = scheduleList;
             return response;
         }
     }

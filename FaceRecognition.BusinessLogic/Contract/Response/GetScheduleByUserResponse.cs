@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FaceRecognition.BusinessLogic.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,6 @@ namespace FaceRecognition.BusinessLogic.Contract.Response
     /// </summary>
     public class GetScheduleByUserResponse : BaseResponse
     {
-
+        public List<ScheduleDto> Schedules { get; set; }
     }
 }

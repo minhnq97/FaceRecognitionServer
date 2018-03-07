@@ -18,7 +18,7 @@ namespace FaceRecognition.Api.Controllers
         private readonly ILoginManagement _businessLogic = new LoginManagement();
 
         [HttpPost]
-        public HttpResponseMessage GetTermByUser()
+        public HttpResponseMessage GetUserInfoByIdToken()
         {
             // Receive google id token from the client
             string idToken = Request.Headers.GetValues("idToken").FirstOrDefault();
