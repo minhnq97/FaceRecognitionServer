@@ -21,5 +21,12 @@ namespace FaceRecognition.Api.Controllers
             var response = _businessLogic.GetSlotByTeacher(request);
             return response;
         }
+
+        [HttpPost]
+        public GetSlotDetailResponse GetSlotDetail(GetSlotDetailRequest request)
+        {
+            var response = _businessLogic.GetSlotDetail(request);
+            return response;
+        }
     }
 }

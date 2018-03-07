@@ -11,5 +11,7 @@ namespace FaceRecognition.BusinessLogic.Interfaces
     public interface ISlotManagement
     {
         GetSlotByTeacherResponse GetSlotByTeacher(GetSlotByTeacherRequest request);
+
+        GetSlotDetailResponse GetSlotDetail(GetSlotDetailRequest request);
     }
 }

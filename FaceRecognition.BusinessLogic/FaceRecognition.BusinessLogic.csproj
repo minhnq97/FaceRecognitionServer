@@ -66,6 +66,7 @@
     <Compile Include="Contract\Models\ScheduleDto.cs" />
     <Compile Include="Contract\Models\SlotDto.cs" />
     <Compile Include="Contract\Models\SlotInformation.cs" />
+    <Compile Include="Contract\Models\StudentAttendance.cs" />
     <Compile Include="Contract\Models\StudentDto.cs" />
     <Compile Include="Contract\Models\TeacherDto.cs" />
     <Compile Include="Contract\Models\TermDto.cs" />
@@ -73,12 +74,14 @@
     <Compile Include="Contract\Request\GetCourseByTermRequest.cs" />
     <Compile Include="Contract\Request\GetScheduleByUserRequest.cs" />
     <Compile Include="Contract\Request\GetSlotByTeacherRequest.cs" />
+    <Compile Include="Contract\Request\GetSlotDetailRequest.cs" />
     <Compile Include="Contract\Request\GetTermByUserRequest.cs" />
     <Compile Include="Contract\Request\GetUserByIdTokenRequest.cs" />
     <Compile Include="Contract\Request\ReportToTeacherByScheduleIdRequest.cs" />
     <Compile Include="Contract\Response\BaseResponse.cs" />
     <Compile Include="Contract\Response\GetCourseByTermResponse.cs" />
     <Compile Include="Contract\Response\GetScheduleByUserResponse.cs" />
+    <Compile Include="Contract\Response\GetSlotDetailResponse.cs" />
     <Compile Include="Contract\Response\GetSlotByTeacherResponse.cs" />
     <Compile Include="Contract\Response\GetTermByUserResponse.cs" />
     <Compile Include="Contract\Response\GetUserByIdTokenResponse.cs" />
@@ -88,6 +91,7 @@
     <Compile Include="Interfaces\ISlotManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\FirebaseNotificationPusher.cs" />
+    <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\GoogleApiTokenVerifier.cs" />
   </ItemGroup>
   <ItemGroup />
