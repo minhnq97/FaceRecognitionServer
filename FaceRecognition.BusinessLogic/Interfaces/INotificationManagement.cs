@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace FaceRecognition.BusinessLogic.Interfaces
 {
-    public interface IAttendanceReportManagement
+    public interface INotificationManagement
     {
-        ReportToTeacherByScheduleIdResponse ReportToTeacherByScheduleId(ReportToTeacherByScheduleIdRequest request);
+        GetNotificationsByTeacherIdResponse GetNotificationsByTeacherId(GetNotificationsByTeacherIdRequest request);
     }
 }

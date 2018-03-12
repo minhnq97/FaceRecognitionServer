@@ -171,6 +171,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AttendanceReportController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\ScheduleManagementController.cs" />
     <Compile Include="Controllers\SlotManagementController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />

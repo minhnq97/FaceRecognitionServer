@@ -8,6 +8,7 @@ using FaceRecognition.BusinessLogic.Contract.Request;
 using DemoFaceRecognition.Context;
 using FaceRecognition.BusinessLogic.Contract.Models;
 using FaceRecognition.BusinessLogic.Utils;
+using FaceRecognition.BusinessLogic.Contract.Response;
 
 namespace FaceRecognition.BusinessLogic.Components
 {
@@ -15,7 +16,7 @@ namespace FaceRecognition.BusinessLogic.Components
     {
         private readonly FaceRecognitionContext _context = new FaceRecognitionContext();
 
-        public void ReportToTeacherByScheduleId(ReportToTeacherByScheduleIdRequest request)
+        public ReportToTeacherByScheduleIdResponse ReportToTeacherByScheduleId(ReportToTeacherByScheduleIdRequest request)
         {
             var reportedSchedule = _context.Schedules
                                         .Where(s => s.ScheduleId == Convert.ToInt32(request.ScheduleId))
@@ -41,7 +42,10 @@ namespace FaceRecognition.BusinessLogic.Components
 
                 // Send notification to the responsible teacher
                 FirebaseNotificationPusher.Send(firebaseNotiModel);
+
             }
+
+            return new ReportToTeacherByScheduleIdResponse();
         }
     }
 }

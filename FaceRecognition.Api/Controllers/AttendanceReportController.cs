@@ -1,4 +1,7 @@
-﻿using FaceRecognition.BusinessLogic.Contract.Models;
+﻿using FaceRecognition.BusinessLogic.Components;
+using FaceRecognition.BusinessLogic.Contract.Models;
+using FaceRecognition.BusinessLogic.Contract.Request;
+using FaceRecognition.BusinessLogic.Interfaces;
 using FaceRecognition.BusinessLogic.Utils;
 using System;
 using System.Collections.Generic;
@@ -11,20 +14,19 @@ namespace FaceRecognition.Api.Controllers
 {
     public class AttendanceReportController : ApiController
     {
+        private readonly IAttendanceReportManagement _businessLogic = new AttendanceReportManagement();
+
         [HttpPost]
-        public HttpResponseMessage ReportToTeacher()
+        public HttpResponseMessage ReportToTeacher(ReportToTeacherByScheduleIdRequest request)
         {
-            FirebaseNotificationModel firebaseModel = new FirebaseNotificationModel()
-            {
-                To = "",
-                Notification = new NotificationModel()
-                {
-                    Title = "Make it happen",
-                    Body = "This is message body"
-                }
-            };
-            FirebaseNotificationPusher.Send(firebaseModel);
-            return null;
+            var response = _businessLogic.ReportToTeacherByScheduleId(request);
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        [HttpPost]
+        public HttpResponseMessage DeclineAttendanceByTeacher()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }
