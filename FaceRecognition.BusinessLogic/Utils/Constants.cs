@@ -20,5 +20,13 @@ namespace FaceRecognition.BusinessLogic.Utils
             public const string Present = "Present";
             public const string Absent = "Absent";
         }
+
+        public class KairosApi
+        {
+            public const string AppId = "fe96ef60";
+            public const string Key = "e37a05bf688189d31801e0aff09932ae";
+            public const string GalleryName = "IS1101";
+            public const string ApiRecognize = @"https://api.kairos.com/recognize";
+        }
     }
 }

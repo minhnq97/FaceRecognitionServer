@@ -53,17 +53,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\AttendanceManagement.cs" />
     <Compile Include="Components\AttendanceReportManagement.cs" />
     <Compile Include="Components\LoginManagement.cs" />
     <Compile Include="Components\NotificationManagement.cs" />
     <Compile Include="Components\ScheduleManagement.cs" />
     <Compile Include="Components\SlotManagement.cs" />
     <Compile Include="Contract\Models\AttendanceImageDto.cs" />
+    <Compile Include="Contract\Models\Candidate.cs" />
     <Compile Include="Contract\Models\ClassDto.cs" />
     <Compile Include="Contract\Models\CourseDto.cs" />
     <Compile Include="Contract\Models\FirebaseNotificationModel.cs" />
+    <Compile Include="Contract\Models\Image.cs" />
     <Compile Include="Contract\Models\NotificationModel.cs" />
     <Compile Include="Contract\Models\NotificationInfo.cs" />
+    <Compile Include="Contract\Models\RootImage.cs" />
     <Compile Include="Contract\Models\ScheduleDto.cs" />
     <Compile Include="Contract\Models\SlotDto.cs" />
     <Compile Include="Contract\Models\SlotInformation.cs" />
@@ -71,6 +75,7 @@
     <Compile Include="Contract\Models\StudentDto.cs" />
     <Compile Include="Contract\Models\TeacherDto.cs" />
     <Compile Include="Contract\Models\TermDto.cs" />
+    <Compile Include="Contract\Models\Transaction.cs" />
     <Compile Include="Contract\Request\BaseRequest.cs" />
     <Compile Include="Contract\Request\GetCourseByTermRequest.cs" />
     <Compile Include="Contract\Request\GetNotificationsByTeacherIdRequest.cs" />
@@ -80,6 +85,7 @@
     <Compile Include="Contract\Request\GetTermByUserRequest.cs" />
     <Compile Include="Contract\Request\GetUserByIdTokenRequest.cs" />
     <Compile Include="Contract\Request\ReportToTeacherByScheduleIdRequest.cs" />
+    <Compile Include="Contract\Request\TakeAttendanceByImageRequest.cs" />
     <Compile Include="Contract\Response\BaseResponse.cs" />
     <Compile Include="Contract\Response\GetCourseByTermResponse.cs" />
     <Compile Include="Contract\Response\GetNotificationsByTeacherIdResponse.cs" />
@@ -89,6 +95,8 @@
     <Compile Include="Contract\Response\GetTermByUserResponse.cs" />
     <Compile Include="Contract\Response\GetUserByIdTokenResponse.cs" />
     <Compile Include="Contract\Response\ReportToTeacherByScheduleIdResponse.cs" />
+    <Compile Include="Contract\Response\TakeAttendanceByImageResponse.cs" />
+    <Compile Include="Interfaces\IAttendanceManagement.cs" />
     <Compile Include="Interfaces\IAttendanceReportManagement.cs" />
     <Compile Include="Interfaces\ILoginManagement.cs" />
     <Compile Include="Interfaces\INotificationManagement.cs" />
