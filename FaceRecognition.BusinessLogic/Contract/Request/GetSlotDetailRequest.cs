@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FaceRecognition.BusinessLogic.Contract.Request
 {
-    public class GetSlotDetailRequest:BaseRequest
+    public class GetSlotDetailRequest : BaseRequest
     {
         public int SlotId;
         public string ClassId;
