@@ -18,8 +18,6 @@ namespace FaceRecognition.BusinessLogic.Components
     public class AttendanceManagement : IAttendanceManagement, IDisposable
     {
         private readonly FaceRecognitionContext _context = new FaceRecognitionContext();
-        public const string ImageUrl1 = @"https://scontent.fhan3-2.fna.fbcdn.net/v/t1.0-9/29062743_770024833189538_2847824013172932608_n.jpg?oh=26836cdcc45099ea750f2f4e8822251f&oe=5B39FAA7";
-        public const string ImageUrl2 = @"https://scontent.fhan3-2.fna.fbcdn.net/v/t1.0-9/24068363_770025543189467_5619623428714659840_n.jpg?oh=36056f1bb7781912193fcc1d3d4841d2&oe=5B4A4901";
 
         public void Dispose()
         {
@@ -29,8 +27,6 @@ namespace FaceRecognition.BusinessLogic.Components
         public TakeAttendanceByImageResponse TakeAttendanceByImage(TakeAttendanceByImageRequest request)
         {
             TakeAttendanceByImageResponse response = new TakeAttendanceByImageResponse();
-            request.ImageUrls.Add(ImageUrl1);
-            request.ImageUrls.Add(ImageUrl2);
             var rootImages = new List<RootImage>();
             foreach (var imageUrl in request.ImageUrls)
             {
@@ -38,7 +34,49 @@ namespace FaceRecognition.BusinessLogic.Components
                 var rootImage = task.Result;
                 rootImages.Add(rootImage);
             }
-
+            var listCandidateId = new List<string>();
+            foreach (var rootImage in rootImages)
+            {
+                foreach (var image in rootImage.Images)
+                {
+                    if(image.Candidates != null && image.Transaction.Status.Equals(Constants.KairosApi.TransactionSuccess))
+                    {
+                        var firstCandidate = image.Candidates.OrderByDescending(c => c.Confidence).First();
+                        listCandidateId.Add(firstCandidate.SubjectId);
+                    }
+                }
+            }
+            listCandidateId = listCandidateId.Distinct().ToList();
+            var studentList = (from sd in _context.Schedules
+                              where sd.TeacherId == request.UserId
+                              && sd.Date == request.Date
+                              && sd.SlotId == request.SlotId
+                              select sd).ToList();
+            List<StudentAttendance> students = new List<StudentAttendance>();
+            foreach (var student in studentList)
+            {
+                if(listCandidateId.Any(x => x.Equals(student.StudentId)))
+                {
+                    student.AttendanceStatus = Constants.AttendanceStatus.Present;
+                }
+                else
+                {
+                    student.AttendanceStatus = Constants.AttendanceStatus.Absent;
+                }
+                var studentAttendance = (from st in _context.Students
+                                 where st.StudentId == student.StudentId
+                                 select new StudentAttendance()
+                                 {
+                                     StudentId = st.StudentId,
+                                     FullName = st.FullName,
+                                     Email = st.Email,
+                                     Image = st.Image,
+                                     AttendanceStatus = student.AttendanceStatus
+                                 }).First();
+                students.Add(studentAttendance);
+            }
+            _context.SaveChanges();
+            response.Students = students;
             return response;
         }
 
