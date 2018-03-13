@@ -27,6 +27,8 @@ namespace FaceRecognition.BusinessLogic.Utils
             public const string Key = "e37a05bf688189d31801e0aff09932ae";
             public const string GalleryName = "IS1101";
             public const string ApiRecognize = @"https://api.kairos.com/recognize";
+            public const string TransactionSuccess = "success";
+            public const string TransactionFailure = "failure";
         }
     }
 }

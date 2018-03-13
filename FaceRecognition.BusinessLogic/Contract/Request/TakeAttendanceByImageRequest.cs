@@ -10,5 +10,7 @@ namespace FaceRecognition.BusinessLogic.Contract.Request
     {
         public List<String> ImageUrls { get; set; }
         public string GalleryName { get; set; }
+        public DateTime Date { get; set; }
+        public int SlotId { get; set; }
     }
 }
