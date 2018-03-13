@@ -80,6 +80,9 @@ namespace FaceRecognition.BusinessLogic.Components
                                            Image = std.Image,
                                            AttendanceStatus = sd.AttendanceStatus
                                        }).ToList();
+
+                    listStudent.ForEach(s => s.Image = ImageConverter.ToBase64(s.Image));
+
                     var slotInformation = (from sd in _context.Schedules
                                                join sc in _context.Slots
                                                    on sd.SlotId equals sc.SlotId
