@@ -11,5 +11,7 @@ namespace FaceRecognition.BusinessLogic.Interfaces
     public interface IAttendanceManagement
     {
         TakeAttendanceByImageResponse TakeAttendanceByImage(TakeAttendanceByImageRequest request);
+
+        TakeAttendanceManuallyResponse TakeAttendanceManually(TakeAttendanceManuallyRequest request);
     }
 }

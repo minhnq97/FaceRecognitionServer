@@ -21,5 +21,12 @@ namespace FaceRecognition.Api.Controllers
             var response = _businessLogic.TakeAttendanceByImage(request);
             return response;
         }
+
+        [HttpPost]
+        public TakeAttendanceManuallyResponse TakeAttendanceManually(TakeAttendanceManuallyRequest request)
+        {
+            var response = _businessLogic.TakeAttendanceManually(request);
+            return response;
+        }
     }
 }
