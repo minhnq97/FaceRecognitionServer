@@ -57,7 +57,7 @@ namespace FaceRecognition.BusinessLogic.Components
             {
                 if(listCandidateId.Any(x => x.Equals(student.StudentId)))
                 {
-                    student.AttendanceStatus = Constants.AttendanceStatus.Present;
+                    student.AttendanceStatus = Constants.AttendanceStatus.Presented;
                 }
                 else
                 {

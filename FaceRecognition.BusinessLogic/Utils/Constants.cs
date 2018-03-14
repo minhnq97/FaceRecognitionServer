@@ -17,7 +17,7 @@ namespace FaceRecognition.BusinessLogic.Utils
         public class AttendanceStatus
         {
             public const string NotYet = "Not Yet";
-            public const string Present = "Present";
+            public const string Presented = "Presented";
             public const string Absent = "Absent";
         }
 
