@@ -80,6 +80,23 @@ namespace FaceRecognition.BusinessLogic.Components
             return response;
         }
 
+        public TakeAttendanceManuallyResponse TakeAttendanceManually(TakeAttendanceManuallyRequest request)
+        {
+            TakeAttendanceManuallyResponse response = new TakeAttendanceManuallyResponse();
+            foreach(var student in request.Students)
+            {
+                var attendance = (from sd in _context.Schedules
+                                  where sd.TeacherId == request.UserId
+                                  && sd.Date == request.Date
+                                  && sd.SlotId == request.SlotId
+                                  && sd.StudentId == student.StudentId
+                                  select sd).First();
+                attendance.AttendanceStatus = student.AttendanceStatus;
+            }
+            _context.SaveChanges();
+            return response;
+        }
+
         private async Task<RootImage> GetImages(string imageUrl)
         {
             HttpClient client = new HttpClient();
@@ -100,5 +117,7 @@ namespace FaceRecognition.BusinessLogic.Components
 
             return rootObj;
         }
+
+
     }
 }

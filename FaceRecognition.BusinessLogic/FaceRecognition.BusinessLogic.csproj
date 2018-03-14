@@ -86,6 +86,7 @@
     <Compile Include="Contract\Request\GetUserByIdTokenRequest.cs" />
     <Compile Include="Contract\Request\ReportToTeacherByScheduleIdRequest.cs" />
     <Compile Include="Contract\Request\TakeAttendanceByImageRequest.cs" />
+    <Compile Include="Contract\Request\TakeAttendanceManuallyRequest.cs" />
     <Compile Include="Contract\Response\BaseResponse.cs" />
     <Compile Include="Contract\Response\GetCourseByTermResponse.cs" />
     <Compile Include="Contract\Response\GetNotificationsByTeacherIdResponse.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Contract\Response\GetUserByIdTokenResponse.cs" />
     <Compile Include="Contract\Response\ReportToTeacherByScheduleIdResponse.cs" />
     <Compile Include="Contract\Response\TakeAttendanceByImageResponse.cs" />
+    <Compile Include="Contract\Response\TakeAttendanceManuallyResponse.cs" />
     <Compile Include="Interfaces\IAttendanceManagement.cs" />
     <Compile Include="Interfaces\IAttendanceReportManagement.cs" />
     <Compile Include="Interfaces\ILoginManagement.cs" />
