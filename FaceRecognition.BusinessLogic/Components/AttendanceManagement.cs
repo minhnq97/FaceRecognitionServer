@@ -75,6 +75,7 @@ namespace FaceRecognition.BusinessLogic.Components
                                  }).First();
                 students.Add(studentAttendance);
             }
+            students.ForEach(s => s.Image = ImageConverter.ToBase64(s.Image));
             _context.SaveChanges();
             response.Students = students;
             return response;
