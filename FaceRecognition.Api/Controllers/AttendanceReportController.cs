@@ -14,7 +14,7 @@ namespace FaceRecognition.Api.Controllers
 {
     public class AttendanceReportController : ApiController
     {
-        private readonly IAttendanceReportManagement _businessLogic = new AttendanceReportManagement();
+        private readonly AttendanceReportManagement _businessLogic = new AttendanceReportManagement();
 
         [HttpPost]
         public HttpResponseMessage ReportToTeacher(ReportToTeacherByScheduleIdRequest request)
