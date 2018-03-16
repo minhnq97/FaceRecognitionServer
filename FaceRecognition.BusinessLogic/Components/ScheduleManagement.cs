@@ -107,7 +107,16 @@ namespace FaceRecognition.BusinessLogic.Components
             }
             else if (request.RoleName.Equals("teacher"))
             {
-
+                scheduleList = _context.Schedules.Where(s => s.TeacherId == request.UserId && s.TermId == request.TermId && s.CourseId == request.CourseId)
+                                .GroupBy(g => new {g.Date, g.SlotId, g.TeacherId, g.ClassId })
+                                .Select(s => new ScheduleDto()
+                                {
+                                    ScheduleId = s.Select(c => c.ScheduleId).FirstOrDefault(),
+                                    Date = SqlFunctions.DateName("day", s.Key.Date) + "/" + SqlFunctions.DatePart("mm", s.Key.Date) + "/" + SqlFunctions.DateName("year", s.Key.Date),
+                                    SlotNo = s.Key.SlotId,
+                                    TeacherId = s.Key.TeacherId,
+                                    ClassId = s.Select(c => c.ClassId).FirstOrDefault()
+                                }).ToList();
             }
             response.Schedules = scheduleList;
             return response;
