@@ -1,45 +1,53 @@
 ﻿using DemoFaceRecognition.Context;
+using FaceRecognition.BusinessLogic.Contract.Models;
+using FaceRecognition.BusinessLogic.Contract.Request;
+using FaceRecognition.BusinessLogic.Contract.Response;
 using FaceRecognition.BusinessLogic.Interfaces;
+using FaceRecognition.BusinessLogic.Utils;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FaceRecognition.BusinessLogic.Contract.Request;
-using FaceRecognition.BusinessLogic.Contract.Response;
-using FaceRecognition.BusinessLogic.Contract.Models;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using FaceRecognition.BusinessLogic.Utils;
-using Newtonsoft.Json;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace FaceRecognition.BusinessLogic.Components
 {
     public class AttendanceManagement : IAttendanceManagement, IDisposable
     {
-        private readonly FaceRecognitionContext _context = new FaceRecognitionContext();
-
-        public void Dispose()
+        private readonly FaceRecognitionContext _context;
+        public AttendanceManagement()
         {
-            _context.Dispose();
+            _context = new FaceRecognitionContext();
         }
 
-        public TakeAttendanceByImageResponse TakeAttendanceByImage(TakeAttendanceByImageRequest request)
+        public void Dispose()
+        { 
+            _context?.Dispose();
+        }
+
+        public async Task<TakeAttendanceByImageResponse> TakeAttendanceByImage(TakeAttendanceByImageRequest request)
         {
             TakeAttendanceByImageResponse response = new TakeAttendanceByImageResponse();
             var rootImages = new List<RootImage>();
-            foreach (var imageUrl in request.ImageUrls)
+
+            await Task.Run(async () =>
             {
-                Task<RootImage> task = Task.Run<RootImage>(async () => await GetImages(imageUrl));
-                var rootImage = task.Result;
-                rootImages.Add(rootImage);
-            }
+                foreach (var imageUrl in request.ImageUrls)
+                {
+                    var image = await GetImages(imageUrl);
+                    rootImages.Add(image);
+                }
+            });
+
             var listCandidateId = new List<string>();
             foreach (var rootImage in rootImages)
             {
                 foreach (var image in rootImage.Images)
                 {
-                    if(image.Candidates != null && image.Transaction.Status.Equals(Constants.KairosApi.TransactionSuccess))
+                    if (image.Candidates != null && image.Transaction.Status.Equals(Constants.KairosApi.TransactionSuccess))
                     {
                         var firstCandidate = image.Candidates.OrderByDescending(c => c.Confidence).First();
                         listCandidateId.Add(firstCandidate.SubjectId);
@@ -48,14 +56,14 @@ namespace FaceRecognition.BusinessLogic.Components
             }
             listCandidateId = listCandidateId.Distinct().ToList();
             var studentList = (from sd in _context.Schedules
-                              where sd.TeacherId == request.UserId
-                              && sd.Date == request.Date
-                              && sd.SlotId == request.SlotId
-                              select sd).ToList();
+                               where sd.TeacherId == request.UserId
+                               && sd.Date == request.Date
+                               && sd.SlotId == request.SlotId
+                               select sd).ToList();
             List<StudentAttendance> students = new List<StudentAttendance>();
             foreach (var student in studentList)
             {
-                if(listCandidateId.Any(x => x.Equals(student.StudentId)))
+                if (listCandidateId.Any(x => x.Equals(student.StudentId)))
                 {
                     student.AttendanceStatus = Constants.AttendanceStatus.Presented;
                 }
@@ -64,18 +72,16 @@ namespace FaceRecognition.BusinessLogic.Components
                     student.AttendanceStatus = Constants.AttendanceStatus.Absent;
                 }
                 var studentAttendance = (from st in _context.Students
-                                 where st.StudentId == student.StudentId
-                                 select new StudentAttendance()
-                                 {
-                                     StudentId = st.StudentId,
-                                     FullName = st.FullName,
-                                     Email = st.Email,
-                                     Image = st.Image,
-                                     AttendanceStatus = student.AttendanceStatus
-                                 }).First();
+                                         where st.StudentId == student.StudentId
+                                         select new StudentAttendance()
+                                         {
+                                             StudentId = st.StudentId,
+                                             FullName = st.FullName,
+                                             Email = st.Email,
+                                             AttendanceStatus = student.AttendanceStatus
+                                         }).First();
                 students.Add(studentAttendance);
             }
-            students.ForEach(s => s.Image = ImageConverter.ToBase64(s.Image));
             _context.SaveChanges();
             response.Students = students;
             return response;
@@ -84,7 +90,7 @@ namespace FaceRecognition.BusinessLogic.Components
         public TakeAttendanceManuallyResponse TakeAttendanceManually(TakeAttendanceManuallyRequest request)
         {
             TakeAttendanceManuallyResponse response = new TakeAttendanceManuallyResponse();
-            foreach(var student in request.Students)
+            foreach (var student in request.Students)
             {
                 var attendance = (from sd in _context.Schedules
                                   where sd.TeacherId == request.UserId
