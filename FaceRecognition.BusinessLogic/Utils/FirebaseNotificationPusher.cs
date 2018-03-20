@@ -1,4 +1,5 @@
 ﻿using FaceRecognition.BusinessLogic.Contract.Models;
+using FaceRecognition.BusinessLogic.Contract.Response;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace FaceRecognition.BusinessLogic.Utils
         private const string FIREBASE_SERVER_KEY = "AAAAlBpQgf0:APA91bEqm8KQR9tuJjFBRy2vatSGTIQWhmsmLQ-Op6xMN2VyJIHnKe45k8lrz0VOU-p4T2Bt53GzDmhkqypwvZLozqn3QAXWIDX6JHT8g3SIQ1Du8jg5Xojv_34P-ugFa7tCenNirc2K";
         private const string FIREBASE_PUSH_URL = "https://fcm.googleapis.com/fcm/send";
 
-        public static async void Send(FirebaseNotificationModel firebaseNotifiModel)
+        public static async Task<ReportToTeacherByScheduleIdResponse> Send(FirebaseNotificationModel firebaseNotifiModel)
         {
             HttpRequestMessage httpRequest = null;
             HttpClient httpClient = null;
@@ -29,10 +30,8 @@ namespace FaceRecognition.BusinessLogic.Utils
                 httpRequest.Content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
 
                 httpClient = new HttpClient();
-                using (await httpClient.SendAsync(httpRequest))
-                {
-
-                }
+                HttpResponseMessage responseMessage = await httpClient.SendAsync(httpRequest);
+                return null;
             }
             catch
             {

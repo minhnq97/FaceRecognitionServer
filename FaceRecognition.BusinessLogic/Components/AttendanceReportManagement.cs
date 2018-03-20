@@ -12,14 +12,15 @@ using FaceRecognition.BusinessLogic.Contract.Response;
 
 namespace FaceRecognition.BusinessLogic.Components
 {
-    public class AttendanceReportManagement : IAttendanceReportManagement
+    public class AttendanceReportManagement
     {
         private readonly FaceRecognitionContext _context = new FaceRecognitionContext();
 
-        public ReportToTeacherByScheduleIdResponse ReportToTeacherByScheduleId(ReportToTeacherByScheduleIdRequest request)
+        public async Task<ReportToTeacherByScheduleIdResponse> ReportToTeacherByScheduleId(ReportToTeacherByScheduleIdRequest request)
         {
+            int scheduleId = Convert.ToInt32(request.ScheduleId);
             var reportedSchedule = _context.Schedules
-                                        .Where(s => s.ScheduleId == Convert.ToInt32(request.ScheduleId))
+                                        .Where(s => s.ScheduleId == scheduleId)
                                         .FirstOrDefault();
             if (reportedSchedule != null)
             {
@@ -32,20 +33,17 @@ namespace FaceRecognition.BusinessLogic.Components
                     To = "/topics/teacher_" + reportedSchedule.TeacherId,
                     Notification = new NotificationModel()
                     {
-                        Title = "Attendance Report",
-                        Body = "Student " + 
-                                reportedSchedule.StudentId + " has reported attendance on " 
-                                + reportedSchedule.SlotId + 
-                                " on " + reportedSchedule.Date
+                        Title = "Attendance Report Date " + reportedSchedule.Date,
+                        Body = "Student with ID " + reportedSchedule.StudentId + " has reported attendance on slot " + reportedSchedule.SlotId
                     }
                 };
 
                 // Send notification to the responsible teacher
-                FirebaseNotificationPusher.Send(firebaseNotiModel);
+                await FirebaseNotificationPusher.Send(firebaseNotiModel);
 
             }
 
-            return new ReportToTeacherByScheduleIdResponse();
+            return null;
         }
     }
 }
