@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FaceRecognition.BusinessLogic.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,10 @@ namespace FaceRecognition.BusinessLogic.Contract.Models
     public class NotificationInfo
     {
         public long ScheduleId { get; set; }
-        public string ClassId { get; set; }
+        public ClassDto Classes { get; set; }
         public string StudentId { get; set; }
-        public string CourseName { get; set; }
-        public int SlotId { get; set; }
+        public CourseDto Course { get; set; }
+        public SlotDto Slot { get; set; }
         public string Date { get; set; }
     }
 }

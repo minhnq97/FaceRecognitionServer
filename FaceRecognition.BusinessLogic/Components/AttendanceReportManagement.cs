@@ -38,9 +38,32 @@ namespace FaceRecognition.BusinessLogic.Components
                     }
                 };
 
-                // Send notification to the responsible teacher
-                await FirebaseNotificationPusher.Send(firebaseNotiModel);
+                // Send notification to the responsible teacher and return response
+                return await FirebaseNotificationPusher.Send(firebaseNotiModel);
 
+            }
+
+            return null;
+        }
+
+        public DeclineAttendanceReportResponse DeclineAttendanceReport(DeclineAttendaceReportRequest request)
+        {
+            if (string.IsNullOrEmpty(request.ScheduleId)) return null;
+            int scheduleId = Convert.ToInt32(request.ScheduleId);
+
+            var declineScheduleRecord = _context.Schedules.Where(s => s.ScheduleId == scheduleId).FirstOrDefault();
+            if (declineScheduleRecord != null)
+            {
+                declineScheduleRecord.ReportStatus = "Declined";
+                try
+                {
+                    _context.SaveChanges();
+                    return new DeclineAttendanceReportResponse();
+                }
+                catch
+                {
+                    return null;
+                }
             }
 
             return null;

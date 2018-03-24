@@ -43,16 +43,22 @@ namespace FaceRecognition.BusinessLogic.Components
             });
 
             var listCandidateId = new List<string>();
-            foreach (var rootImage in rootImages)
+            try
             {
-                foreach (var image in rootImage.Images)
+                foreach (var rootImage in rootImages)
                 {
-                    if (image.Candidates != null && image.Transaction.Status.Equals(Constants.KairosApi.TransactionSuccess))
+                    foreach (var image in rootImage.Images)
                     {
-                        var firstCandidate = image.Candidates.OrderByDescending(c => c.Confidence).First();
-                        listCandidateId.Add(firstCandidate.SubjectId);
+                        if (image.Candidates != null && image.Transaction.Status.Equals(Constants.KairosApi.TransactionSuccess))
+                        {
+                            var firstCandidate = image.Candidates.OrderByDescending(c => c.Confidence).First();
+                            listCandidateId.Add(firstCandidate.SubjectId);
+                        }
                     }
                 }
+            } catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
             listCandidateId = listCandidateId.Distinct().ToList();
             var studentList = (from sd in _context.Schedules

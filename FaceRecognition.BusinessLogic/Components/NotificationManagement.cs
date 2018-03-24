@@ -9,6 +9,7 @@ using FaceRecognition.BusinessLogic.Contract.Response;
 using DemoFaceRecognition.Context;
 using FaceRecognition.BusinessLogic.Contract.Models;
 using System.Data.Entity.SqlServer;
+using FaceRecognition.BusinessLogic.Models;
 
 namespace FaceRecognition.BusinessLogic.Components
 {
@@ -19,28 +20,32 @@ namespace FaceRecognition.BusinessLogic.Components
         public GetNotificationsByTeacherIdResponse GetNotificationsByTeacherId(GetNotificationsByTeacherIdRequest request)
         {
             GetNotificationsByTeacherIdResponse response = new GetNotificationsByTeacherIdResponse();
+            var twoDaysBefore = DateTime.Now.Date.AddDays(-2);
             var notificationList = _context.Schedules
                                     .Where(s => s.TeacherId == request.UserId
                                              && s.ReportStatus == "Reported"
-                                             /*&& s.Date >= DateTime.Now.Date.AddDays(-2)*/)
+                                             && s.Date >= twoDaysBefore)
                                     .Select(s => new
                                     {
                                         ScheduleId = s.ScheduleId,
-                                        ClassId = s.ClassId,
-                                        TeacherId = s.TeacherId,
+                                        ClassId = s.Class.ClassId,
+                                        ClassName = s.Class.ClassName,
                                         StudentId = s.StudentId,
+                                        CourseId = s.CourseId,
                                         CourseName = s.Course.CourseName,
                                         SlotId = s.SlotId,
+                                        StartTime = s.Slot.StartTime,
+                                        EndTime = s.Slot.EndTime,
                                         Date = s.Date
-                                    }).GroupBy(s => new { s.TeacherId })
+                                    })
                                     .Select(s => new NotificationInfo()
                                     {
-                                        ScheduleId = s.FirstOrDefault().ScheduleId,
-                                        ClassId = s.FirstOrDefault().ClassId,
-                                        StudentId = s.FirstOrDefault().StudentId,
-                                        CourseName = s.FirstOrDefault().CourseName,
-                                        SlotId = s.FirstOrDefault().SlotId,
-                                        Date = SqlFunctions.DateName("day", s.FirstOrDefault().Date) + "/" + SqlFunctions.DateName("month", s.FirstOrDefault().Date) + "/" + SqlFunctions.DateName("year", s.FirstOrDefault().Date)
+                                        ScheduleId = s.ScheduleId,
+                                        Classes = new ClassDto() { ClassId = s.ClassId, ClassName = s.ClassName },
+                                        StudentId = s.StudentId,
+                                        Course = new CourseDto() { CourseId = s.CourseId, CourseName = s.CourseName },
+                                        Slot = new SlotDto() { SlotId = s.SlotId, StartTime = s.StartTime, EndTime = s.EndTime },
+                                        Date = SqlFunctions.DateName("day", s.Date) + "/" + SqlFunctions.DateName("month", s.Date) + "/" + SqlFunctions.DateName("year", s.Date)
                                     }).ToList();
 
             response.Notifications = notificationList;

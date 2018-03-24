@@ -24,8 +24,10 @@ namespace FaceRecognition.Api.Controllers
         }
 
         [HttpPost]
-        public HttpResponseMessage DeclineAttendanceByTeacher()
+        public HttpResponseMessage DeclineAttendanceByTeacher(DeclineAttendaceReportRequest request)
         {
+            var response = _businessLogic.DeclineAttendanceReport(request);
+            if (response == null) return Request.CreateResponse(HttpStatusCode.InternalServerError);
             return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
