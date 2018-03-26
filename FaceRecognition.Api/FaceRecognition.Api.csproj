@@ -195,6 +195,9 @@
     <Content Include="Images\se04686.jpg" />
     <Content Include="Images\se04763.jpg" />
     <Content Include="Images\se04781.jpg" />
+    <Content Include="Images\se12345.jpg" />
+    <Content Include="Images\se21345.jpg" />
+    <Content Include="Images\se62120.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
