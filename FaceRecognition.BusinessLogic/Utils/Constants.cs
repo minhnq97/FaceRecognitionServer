@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FaceRecognition.BusinessLogic.Utils
+﻿namespace FaceRecognition.BusinessLogic.Utils
 {
     public static class Constants
     {
@@ -29,6 +23,11 @@ namespace FaceRecognition.BusinessLogic.Utils
             public const string ApiRecognize = @"https://api.kairos.com/recognize";
             public const string TransactionSuccess = "success";
             public const string TransactionFailure = "failure";
+        }
+
+        public class Config
+        {
+            public const string AttendanceImagePath = @"Images\attendance\";
         }
     }
 }

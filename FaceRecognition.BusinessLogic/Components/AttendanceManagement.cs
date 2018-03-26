@@ -7,11 +7,13 @@ using FaceRecognition.BusinessLogic.Utils;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace FaceRecognition.BusinessLogic.Components
 {
@@ -24,7 +26,7 @@ namespace FaceRecognition.BusinessLogic.Components
         }
 
         public void Dispose()
-        { 
+        {
             _context?.Dispose();
         }
 
@@ -32,13 +34,18 @@ namespace FaceRecognition.BusinessLogic.Components
         {
             TakeAttendanceByImageResponse response = new TakeAttendanceByImageResponse();
             var rootImages = new List<RootImage>();
-
+            var locationImagePath = Path.Combine(HttpRuntime.AppDomainAppPath, Constants.Config.AttendanceImagePath,request.Date.ToString("yyyyMMdd"), request.ClassId, request.SlotId.ToString());
+            ImageConverter.CreateDirectory(locationImagePath);
+            int numberOfImage = 1;
             await Task.Run(async () =>
             {
                 foreach (var imageUrl in request.ImageUrls)
                 {
                     var image = await GetImages(imageUrl);
                     rootImages.Add(image);
+                    //save image to folder
+                    ImageConverter.Base64ToImage(Path.Combine(locationImagePath, numberOfImage + ".jpg"), imageUrl);
+                    numberOfImage++;
                 }
             });
 
@@ -56,7 +63,8 @@ namespace FaceRecognition.BusinessLogic.Components
                         }
                     }
                 }
-            } catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
