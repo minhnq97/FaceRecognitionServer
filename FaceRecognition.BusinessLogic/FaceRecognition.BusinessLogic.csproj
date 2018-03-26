@@ -77,6 +77,7 @@
     <Compile Include="Contract\Models\TermDto.cs" />
     <Compile Include="Contract\Models\Transaction.cs" />
     <Compile Include="Contract\Request\BaseRequest.cs" />
+    <Compile Include="Contract\Request\DeclineAttendaceReportRequest.cs" />
     <Compile Include="Contract\Request\GetCourseByTermRequest.cs" />
     <Compile Include="Contract\Request\GetNotificationsByTeacherIdRequest.cs" />
     <Compile Include="Contract\Request\GetScheduleByUserRequest.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Contract\Request\TakeAttendanceByImageRequest.cs" />
     <Compile Include="Contract\Request\TakeAttendanceManuallyRequest.cs" />
     <Compile Include="Contract\Response\BaseResponse.cs" />
+    <Compile Include="Contract\Response\DeclineAttendanceReportResponse.cs" />
     <Compile Include="Contract\Response\GetCourseByTermResponse.cs" />
     <Compile Include="Contract\Response\GetNotificationsByTeacherIdResponse.cs" />
     <Compile Include="Contract\Response\GetScheduleByUserResponse.cs" />
