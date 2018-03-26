@@ -104,6 +104,11 @@ namespace FaceRecognition.BusinessLogic.Components
                                   && sd.SlotId == request.SlotId
                                   && sd.StudentId == student.StudentId
                                   select sd).First();
+                if (attendance.AttendanceStatus.Equals("Absent")
+                    && attendance.ReportStatus.Equals("Reported"))
+                {
+                    attendance.ReportStatus = "Edited";
+                }
                 attendance.AttendanceStatus = student.AttendanceStatus;
             }
             _context.SaveChanges();
